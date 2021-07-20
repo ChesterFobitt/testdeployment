@@ -1,0 +1,21 @@
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+
+# IDE - VSCode
+**/.vscode/*
+**/.history/*
+
+# misc
+/.sass-cache
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
