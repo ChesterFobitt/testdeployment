@@ -1,5 +1,5 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 
 app.get("*", function(req, res) {
     res.json({
@@ -7,9 +7,9 @@ app.get("*", function(req, res) {
     })
 });
 
-var server = app.listen(5320, function() {
-    var host = server.address().address;
-    var port = server.address().port;
+const server = app.listen(5320, function() {
+    const host = server.address().address;
+    const port = server.address().port;
 
     console.log('Start server on http://%s:%s', host, port)
 });
