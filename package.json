@@ -1,24 +1,12 @@
 {
   "name": "testdeployment",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChesterFobitt/testdeployment.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChesterFobitt/testdeployment/issues"
-  },
-  "homepage": "https://github.com/ChesterFobitt/testdeployment#readme",
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.0.0",
