@@ -12,6 +12,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                input message: 'Check current user!'
+                sh 'who'
+                input message: 'Check current user end!'
             }
         }
         stage('Test') {
