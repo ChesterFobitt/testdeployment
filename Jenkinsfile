@@ -20,7 +20,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                who
+                npm test
             }
         }
         stage('Deliver') {
