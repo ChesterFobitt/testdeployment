@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                who
-                npm test
+                sh 'who'
+                sh 'npm test'
             }
         }
         stage('Deliver') {
