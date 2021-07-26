@@ -13,9 +13,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                input message: 'Check current user!'
-                sh 'who'
-                input message: 'Check current user end!'
             }
         }
         stage('Test') {
@@ -26,6 +23,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh './jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
