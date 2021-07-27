@@ -13,12 +13,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh 'docker-compose build'
+                sh '/usr/local/bin/docker-compose build'
             }
         }
         stage('Deliver') {
             steps {
-                sh 'docker-compose up'
+                sh '/usr/local/bin/docker-compose up'
             }
         }
     }
