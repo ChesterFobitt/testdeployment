@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
+                sh "cd /usr/bin | ls"
                 sh "docker-compose build"
             }
         }
