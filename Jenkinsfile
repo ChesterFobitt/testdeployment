@@ -1,10 +1,4 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-buster-slim'
-            args '-p 4000:4000'
-        }
-    }
     environment {
         CI = 'true'
         HOME = '.'
@@ -13,12 +7,13 @@ pipeline {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh '/usr/bin/docker-compose build'
+                sh "ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
+                sh "docker-compose build"
             }
         }
         stage('Deliver') {
             steps {
-                sh '/usr/bin/docker-compose up'
+                sh "docker-compose up"
             }
         }
     }
