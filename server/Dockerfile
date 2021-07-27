@@ -1,13 +1,19 @@
-FROM node:12
+# For server
 
+FROM node:12-alpine
+
+# Create App Directory
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+# Install Dependencies
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --silent
 
+# Copy app source code
 COPY . .
 
-EXPOSE 5320
+EXPOSE 5000 
 
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
