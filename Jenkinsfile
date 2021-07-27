@@ -13,13 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'who'
-                sh 'npm test'
+                sh 'docker-compose build'
             }
         }
         stage('Deliver') {
