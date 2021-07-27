@@ -7,19 +7,18 @@ pipeline {
     }
     environment {
         CI = 'true'
+        HOME = '.'
     }
     stages {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh "cd / | ls"
-                sh "cd /usr | ls"
-                sh "/usr/bin/docker-compose build"
+                sh "docker-compose build"
             }
         }
         stage('Deliver') {
             steps {
-                sh "/usr/bin/docker-compose up"
+                sh "docker-compose up"
             }
         }
     }
