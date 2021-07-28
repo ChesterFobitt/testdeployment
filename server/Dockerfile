@@ -1,6 +1,6 @@
 # For server
 
-FROM node:12-alpine
+FROM node:latest
 
 # Create App Directory
 RUN mkdir -p /usr/src/app
