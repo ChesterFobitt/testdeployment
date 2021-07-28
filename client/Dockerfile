@@ -4,7 +4,7 @@ FROM node:latest as build
 
 WORKDIR /app
 COPY . /app
-RUN npm install --only=prod
+RUN npm install --production
 RUN npm run build
 
 FROM nginx:1.16.0-alpine
