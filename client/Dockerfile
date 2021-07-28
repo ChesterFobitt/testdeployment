@@ -1,6 +1,6 @@
 # For client
 
-FROM node:12-alpine as build
+FROM node:latest as build
 
 WORKDIR /app
 COPY . /app
