@@ -1,10 +1,10 @@
 # For client
 
-FROM node:latest as build
+FROM node:16.5-buster-slim as build
 
 WORKDIR /app
 COPY . /app
-RUN npm install
+RUN npm install --production
 RUN npm run build
 
 FROM nginx:stable-alpine
