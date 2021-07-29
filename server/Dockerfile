@@ -1,6 +1,6 @@
 # For server
 
-FROM node:latest
+FROM node:16.5-buster-slim
 
 # Create App Directory
 RUN mkdir -p /usr/src/app
